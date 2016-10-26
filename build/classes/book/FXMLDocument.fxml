@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="book.FXMLDocumentController">
+    <children>
+      <SplitPane dividerPositions="0.38672768878718533" orientation="VERTICAL" prefHeight="439.0" prefWidth="355.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="151.0" prefWidth="353.0">
+               <children>
+                  <VBox layoutX="7.0" layoutY="8.0" prefHeight="112.0" prefWidth="153.0">
+                     <children>
+                        <TextField fx:id="surnameF" promptText="Surname" />
+                        <TextField fx:id="firstnameF" promptText="First name" />
+                        <TextField fx:id="phoneF" promptText="Phone" />
+                        <TextField fx:id="emailF" promptText="E-mail" />
+                     </children>
+                  </VBox>
+                  <HBox layoutX="7.0" layoutY="127.0">
+                     <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAdd" text="Add" />
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#handleUpdate" text="Update" />
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+                     </children>
+                  </HBox>
+                    <Label fx:id="label" layoutX="160.0" layoutY="127.0" minHeight="16" minWidth="11.0" prefHeight="25.0" prefWidth="176.0" />
+                  <HBox layoutX="248.0" layoutY="127.0">
+                     <children>
+                        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+                        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="table" layoutX="-1.0" onMouseClicked="#handleSelected" prefHeight="285.0" prefWidth="355.0">
+                    <columns>
+                      <TableColumn fx:id="surnameCol" prefWidth="75.0" text="Surname">
+                          <cellValueFactory><PropertyValueFactory property="surname" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn fx:id="firstnameCol" prefWidth="75.0" text="First name">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="firstname" />
+                          </cellValueFactory>
+                      </TableColumn>
+                        <TableColumn fx:id="phoneCol" prefWidth="75.0" text="Phone">
+                        <cellValueFactory><PropertyValueFactory property="phone" />
+                          </cellValueFactory>
+                      </TableColumn>
+                        <TableColumn fx:id="emailCal" prefWidth="75.0" text="E-mail">
+                        <cellValueFactory><PropertyValueFactory property="email" />
+                          </cellValueFactory>
+                      </TableColumn>
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>

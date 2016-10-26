@@ -1,0 +1,2 @@
+Nowak;Pola;234;pola@nowal.pl
+Kowalski;Jan;1334;kowaljan@wp.pl
